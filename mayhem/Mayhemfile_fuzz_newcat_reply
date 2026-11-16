@@ -1,0 +1,10 @@
+project: savantenvs/Hamlib
+target: fuzz_newcat_reply
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_newcat_reply/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_newcat_reply
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_newcat_reply/fuzz_newcat_reply.dict
+    timeout: 10

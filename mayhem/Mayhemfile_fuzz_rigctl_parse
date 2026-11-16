@@ -1,0 +1,10 @@
+project: savantenvs/Hamlib
+target: fuzz_rigctl_parse
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_rigctl_parse/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_rigctl_parse
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_rigctl_parse/fuzz_rigctl_parse.dict
+    timeout: 10

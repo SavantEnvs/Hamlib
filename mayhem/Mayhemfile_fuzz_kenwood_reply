@@ -1,0 +1,10 @@
+project: savantenvs/Hamlib
+target: fuzz_kenwood_reply
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_kenwood_reply/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_kenwood_reply
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_kenwood_reply/fuzz_kenwood_reply.dict
+    timeout: 10
